@@ -1,12 +1,18 @@
 import Navbar from "./Navbar";
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import Button from "./Button";
 import CustomCheckbox from "./CustomCheckbox";
 
 const List = () => {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked((prev) => !prev);
+  };
+
   const handleAdd = () => {
-    toast.error("Error");
+    toast.error("Developing");
   };
   return (
     <div className="page min-h-screen font-Nunito bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
@@ -88,14 +94,67 @@ const List = () => {
                                     scope="col"
                                     className="relative w-12 sm:w-16 sm:px-8"
                                   >
-                                    <CustomCheckbox />
+                                    <div className="bg-gray-50 dark:bg-black/50">
+                                      <label className="inline-flex items-center">
+                                        <input
+                                          type="checkbox"
+                                          id="checkbox"
+                                          checked={isChecked}
+                                          onChange={handleCheckboxChange}
+                                          className=" appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-blue-600 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                                          name="checkbox"
+                                        />
+                                      </label>
+                                    </div>
                                   </th>
-                                  <th
-                                    scope="col"
-                                    className="px-3 font-Nunito py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-100"
-                                  >
-                                    Customer
-                                  </th>
+                                  {isChecked ? (
+                                    <div class="absolute top-0 left-12 flex h-12 items-center space-x-3 sm:left-16">
+                                      <th
+                                        scope="col"
+                                        className=" appearance-none px-3 hidden font-Nunito py-4 text-left text-sm font-semibold text-gray-900 dark:text-gray-100"
+                                      >
+                                        Customer
+                                      </th>
+                                      <button
+                                        type="button"
+                                        onClick={handleAdd}
+                                        class="inline-flex items-center rounded border mt-4 text-white border-red-500 bg-red-500 px-2.5 py-2.5 text-xs font-medium shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-30"
+                                      >
+                                        Move to Trash
+                                      </button>
+
+                                      <button
+                                        type="button"
+                                        onClick={handleAdd}
+                                        class="inline-flex items-center py-2.5 mt-4 rounded border text-white border-red-500 bg-red-500 px-2.5 text-xs font-medium shadow-sm hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-30"
+                                      >
+                                        Delete Permanently
+                                      </button>
+                                      <th
+                                        scope="col"
+                                        className=" appearance-none py-3.5 hidden px-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100"
+                                      >
+                                        Contact
+                                      </th>
+                                    </div>
+                                  ) : null}
+
+                                  {!isChecked && (
+                                    <div className="bg-gray-50 dark:bg-black/50">
+                                      <th
+                                        scope="col"
+                                        className="py-7 px-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100"
+                                      >
+                                        Customer
+                                      </th>
+                                      <th
+                                        scope="col"
+                                        className=" appearance-none py-3.5 hidden px-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100"
+                                      >
+                                        Contact
+                                      </th>
+                                    </div>
+                                  )}
                                   <th
                                     scope="col"
                                     className="py-3.5 px-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100"
@@ -126,15 +185,17 @@ const List = () => {
                                 <tr className="bg-gray-50 dark:bg-gray-800/50">
                                   <td className="relative w-12 sm:w-16 sm:px-8">
                                     <div className="absolute inset-y-0 left-0 w-0.5 bg-blue-600"></div>
-                                    <CustomCheckbox />
+                                    <CustomCheckbox
+                                      onChange={handleCheckboxChange}
+                                    />
                                   </td>
                                   <td className="whitespace-nowrap py-4 text-sm font-medium">
                                     <div>Customer 1</div>
                                     <div>Customer Company 1</div>
                                   </td>
                                   <td className="whitespace-nowrap px-3 py-4 text-sm font-medium">
-                                    <div>419.270.8260</div>
-                                    <div>krystel.daugherty@example.com</div>
+                                    <div>+1-603-498-3062</div>
+                                    <div>skub@example.net</div>
                                   </td>
                                   <td className="whitespace-nowrap px-3 py-4 text-sm font-bold">
                                     <a className="balance-0" href="/">
@@ -147,12 +208,12 @@ const List = () => {
                                     </a>
                                   </td>
 
-                                  <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 w-20">
-                                    <div class="flex flex-col items-center justify-end gap-3">
-                                      <div class="flex items-center justify-end gap-3">
+                                  <td className="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6 w-20">
+                                    <div className="flex flex-col items-center justify-end gap-3">
+                                      <div className="flex items-center justify-end gap-3">
                                         <button
                                           type="button"
-                                          class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+                                          className="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
                                         >
                                           <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +232,7 @@ const List = () => {
                                         </button>
                                         <button
                                           type="button"
-                                          class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
+                                          className="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200"
                                         >
                                           <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +250,7 @@ const List = () => {
                                           </svg>
                                         </button>
                                       </div>
-                                      <div class="flex items-center justify-end gap-3">
+                                      <div className="flex items-center justify-end gap-3">
                                         <button
                                           class="text-blue-600 hover:text-blue-900 dark:hover:text-blue-300"
                                           onClick={handleAdd}
@@ -211,7 +272,7 @@ const List = () => {
                                           </svg>
                                         </button>
                                         <button
-                                          class="text-red-600 hover:text-red-900 dark:hover:text-red-300"
+                                          className="text-red-600 hover:text-red-900 dark:hover:text-red-300"
                                           onClick={handleAdd}
                                           type="button"
                                         >

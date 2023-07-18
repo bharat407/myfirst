@@ -117,7 +117,7 @@ const Navbar = () => {
               </span>
             </div>
           </div>
-          <div className="flex items-cente py-[3.1vh]">
+          <div className="flex items-cente ">
             {/* <div className="flex items-center  gap-2 ">
               <span class="mt-0.5 w-6 h-6">🇺🇸</span>
               <button
@@ -128,7 +128,7 @@ const Navbar = () => {
             </div> */}
             <button
               type="button"
-              class="inline-flex items-center px-3 py-2.5 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-0 transition"
+              class="inline-flex items-center px-3 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-0 transition"
             >
               <img
                 class="h-8 w-8 rounded-full object-cover mr-2"
