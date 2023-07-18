@@ -23,7 +23,7 @@ const Login = () => {
             </label>
             <input
               type="email"
-              className="appearance-none pl-3 text-slate-300 focus:outline-none focus:border-gray-500 focus:ring-[#687A92] focus:ring-[3px] border-gray-500 dark:border-gray-700  rounded-md shadow-sm dark:bg-gray-800 dark:autofill:bg-gray-800 mt-1 block w-full sm:h-10 h-[7vh]"
+              className="appearance-none font-Nunito pl-3  text-slate-300 border focus:outline-none focus:border-gray-500 focus:ring-[#687A92] focus:ring-[3px] border-gray-500 dark:border-gray-700  rounded-md shadow-sm dark:bg-gray-800 dark:autofill:bg-gray-800 mt-1 block w-full sm:h-10 h-[7vh]"
               id="email"
               required=""
             />
@@ -37,7 +37,7 @@ const Login = () => {
             </label>
             <input
               type="password"
-              className="appearance-none pl-3 text-2xl text-slate-300 focus:outline-none focus:border-gray-500 focus:ring-[#687A92] focus:ring-[3px] border-[#e5e7eb] dark:border-gray-700  rounded-md shadow-sm dark:bg-gray-800 dark:autofill:bg-gray-800 mt-1 block w-full sm:h-10 h-[7vh]"
+              className="appearance-none font-Nunito pl-3 text-slate-300 border focus:outline-none focus:border-gray-500 focus:ring-[#687A92] focus:ring-[3px] border-[#e5e7eb] dark:border-gray-700  rounded-md shadow-sm dark:bg-gray-800 dark:autofill:bg-gray-800 mt-1 block w-full sm:h-10 h-[7vh]"
               id="password"
               required=""
               placeholder=""
