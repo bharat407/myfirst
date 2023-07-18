@@ -1,7 +1,30 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import logo from "../assets/logo.svg";
+import { toast } from "react-hot-toast";
+import Button from "./Button";
+import CustomCheckbox from "./CustomCheckbox";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+  function submitHandler(e) {
+    e.preventDefault();
+    navigate("/dashboard");
+  }
+
+  const handleAdd = () => {
+    navigate("/dashboard");
+    toast.success("Login Success");
+  };
+
+  const [remember, setRememberMe] = useState(false);
+
+  const handleRememberMeChange = (event) => {
+    setRememberMe(event.target.checked);
+  };
+
   return (
     <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-800">
       <div>
@@ -10,7 +33,7 @@ const Login = () => {
         </a>
       </div>
       <div className="w-full sm:max-w-md mt-6 px-6 py-4 dark:bg-gray-900 shadow-md overflow-hidden sm:rounded-lg">
-        <form>
+        <form onSubmit={submitHandler}>
           <div className="mb-4 text-base text-gray-600 dark:text-gray-400 font-Nunito">
             Please login to access your account
           </div>
@@ -45,7 +68,7 @@ const Login = () => {
             />
           </div>
 
-          <div className="block mt-4">
+          {/* <div className="block mt-4">
             <label className="inline-flex items-center">
               <input
                 type="checkbox"
@@ -57,6 +80,16 @@ const Login = () => {
                 Remember me
               </span>
             </label>
+          </div> */}
+
+          <div>
+            <CustomCheckbox
+              id="remember"
+              name="remember"
+              label="Remember me"
+              className="mt-4"
+              onChange={handleRememberMeChange}
+            />
           </div>
 
           <div className="flex items-center justify-end mt-4">
@@ -66,12 +99,13 @@ const Login = () => {
             >
               Forgot your password?
             </a>
-            <button
+            {/* <button
               type="submit"
               className="flex items-center px-4 py-3 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-700 focus:outline-none transition ease-in-out duration-150 ml-4 font-Nunito"
             >
               Log in
-            </button>
+            </button> */}
+            <Button name="Log in" onClick={handleAdd} />
           </div>
         </form>
       </div>
