@@ -3,7 +3,7 @@ import React from "react";
 function CustomCheckbox({ id, name, label, className, onChange }) {
   return (
     <div className={`block ${className}`}>
-      <label className="inline-flex items-center">
+      <label className=" inline-flex items-center">
         <input
           type="checkbox"
           id={id}

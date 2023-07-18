@@ -1,7 +1,9 @@
 import React from "react";
 import Navbar from "./Navbar";
 
+
 const Dashboard = () => {
+
   return (
     <div className="page min-h-screen font-Nunito bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
       {/* NavBAr  */}
@@ -172,19 +174,19 @@ const Dashboard = () => {
                       Manage products for invoicing
                     </div>
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/"
                     >
                       List
                     </a>
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/"
                     >
                       Add
                     </a>
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/"
                     >
                       Import
@@ -217,20 +219,20 @@ const Dashboard = () => {
                     </div>
 
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/list"
                     >
                       List
                     </a>
 
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/"
                     >
                       Add
                     </a>
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/"
                     >
                       Import
@@ -262,13 +264,13 @@ const Dashboard = () => {
                       Manage your invoices
                     </div>
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/"
                     >
                       List
                     </a>
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/"
                     >
                       Add
@@ -300,13 +302,13 @@ const Dashboard = () => {
                       Manage your quotations
                     </div>
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/"
                     >
                       List
                     </a>
                     <a
-                      className="inline-flex items-center text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                      className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
                       href="/"
                     >
                       Add

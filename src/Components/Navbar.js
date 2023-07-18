@@ -1,4 +1,6 @@
 import React from "react";
+// import { toast } from "react-hot-toast";
+import DropdownMenu from "./dropDown";
 
 const Navbar = () => {
   return (
@@ -15,13 +17,14 @@ const Navbar = () => {
             </div>
             <div className="hidden space-x-2 lg:my-px sm:ml-px lg:ml-4 lg:flex">
               <a
-                className="font-Nunito inline-flex items-center px-1 py-[27.7px] border-b border-blue-400 text-sm font-medium leading-5 text-gray-900 dark:text-gray-100 focus:outline-none focus:border-blue-700 transition xl:flex"
+                className="font-Nunito focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#183A97] inline-flex items-center px-1 py-[27.7px] border-b-[1px] border-blue-400 text-sm font-medium leading-5 text-gray-900 dark:text-gray-100  focus:border-blue-700 transition xl:flex"
                 href="/"
               >
                 Dashboard
               </a>
             </div>
-            <div class="self-stretch flex items-stretch">
+
+            {/* <div class="self-stretch flex items-stretch">
               <span class="inline-flex rounded-md">
                 <button
                   type="button"
@@ -43,7 +46,9 @@ const Navbar = () => {
                   </svg>
                 </button>
               </span>
-            </div>
+            </div> */}
+
+            <DropdownMenu />
 
             <div class="self-stretch flex items-stretch">
               <span class="inline-flex rounded-md">

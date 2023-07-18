@@ -67,21 +67,6 @@ const Login = () => {
               autoComplete="current-password"
             />
           </div>
-
-          {/* <div className="block mt-4">
-            <label className="inline-flex items-center">
-              <input
-                type="checkbox"
-                id="remember"
-                class="appearance-none w-4 h-4 border border-gray-300 rounded checked:bg-blue-600 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                name="remember"
-              />
-              <span className="ml-2 text-sm text-gray-600 font-Nunito">
-                Remember me
-              </span>
-            </label>
-          </div> */}
-
           <div>
             <CustomCheckbox
               id="remember"
@@ -99,12 +84,6 @@ const Login = () => {
             >
               Forgot your password?
             </a>
-            {/* <button
-              type="submit"
-              className="flex items-center px-4 py-3 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-700 focus:outline-none transition ease-in-out duration-150 ml-4 font-Nunito"
-            >
-              Log in
-            </button> */}
             <Button name="Log in" onClick={handleAdd} />
           </div>
         </form>
