@@ -174,19 +174,19 @@ const Dashboard = () => {
                     </div>
                     <a
                       className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
-                      href="/"
+                      href="/product"
                     >
                       List
                     </a>
                     <a
                       className="inline-flex items-center rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
-                      href="/"
+                      href="/addproduct"
                     >
                       Add
                     </a>
                     <a
                       className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
-                      href="/"
+                      href="/importfile"
                     >
                       Import
                     </a>
@@ -226,13 +226,13 @@ const Dashboard = () => {
 
                     <a
                       className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
-                      href="/"
+                      href="/addcustomers"
                     >
                       Add
                     </a>
                     <a
                       className="inline-flex items-center  rounded-md text-sm font-semibold text-blue-700 hover:text-blue-500 dark:text-blue-400 dark:hover:text-blue-300 focus:outline-none  font-Nunito focus:ring-[2px] focus:ring-[#2563eb]"
-                      href="/"
+                      href="/importcustomerfile"
                     >
                       Import
                     </a>
