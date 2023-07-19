@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import Button from "./Button";
 import CustomCheckbox from "./CustomCheckbox";
+import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 const List = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -14,6 +16,14 @@ const List = () => {
   const handleAdd = () => {
     toast.error("Developing");
   };
+
+  const navigate = useNavigate();
+  function submitHandler(e) {
+    e.preventDefault();
+    navigate("/addcustomers");
+    toast.success("Please Add Customers");
+  }
+
   return (
     <div className="page min-h-screen font-Nunito bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
       <Navbar />
@@ -31,7 +41,7 @@ const List = () => {
                   </div>
                 </div>
                 <div className="mt-4 sm:mt-0 block sm:flex sm:items-center sm:gap-4">
-                  <Button name=" Add New Customer" onClick={handleAdd} />
+                  <Button name=" Add New Customer" onClick={submitHandler} />
                   <form>
                     <div className="mt-4 sm:mt-0 w-full flex items-stretch group bg-white dark:bg-gray-900 border dark:border-gray-700 rounded-md focus-within:border-blue-300 focus-within:ring-2 focus-within:ring-blue-200 dark:focus-within:ring-opacity-50">
                       <div className="relative w-full flex items-stretch">
@@ -423,10 +433,7 @@ const List = () => {
           </div>
         </div>
       </div>
-      <br></br>
-      <div className="mt-1 font-Nunito mb-[-7px] text-center text-sm">
-        © 2023 <strong>SIM</strong> v4.0.0-beta.2
-      </div>
+      <Footer />
     </div>
   );
 };

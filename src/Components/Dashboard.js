@@ -1,9 +1,8 @@
 import React from "react";
 import Navbar from "./Navbar";
-
+import Footer from "./Footer";
 
 const Dashboard = () => {
-
   return (
     <div className="page min-h-screen font-Nunito bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
       {/* NavBAr  */}
@@ -319,10 +318,7 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <br></br>
-        <div className="mt-1 font-Nunito mb-[-7px] text-center text-sm">
-          © 2023 <strong>SIM</strong> v4.0.0-beta.2
-        </div>
+        <Footer />
       </div>
     </div>
   );
