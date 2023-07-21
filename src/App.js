@@ -7,6 +7,7 @@ import AddNewCustomer from "./Components/AddCustomer";
 import Product from "./Components/Admin/Product";
 import AddNewProduct from "./Components/Admin/AddProduct";
 import ImportProductsForm from "./Components/Admin/Import";
+// import InvoiceForm from "./Components/invoice";
 import ImportCustomerForm from "./Components/importCustomer";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/addproduct" element={<AddNewProduct />} />
         <Route path="/importfile" element={<ImportProductsForm />} />
         <Route path="/importcustomerfile" element={<ImportCustomerForm />} />
+        {/* <Route path="/invoice" element={<InvoiceForm />} /> */}
       </Routes>
     </div>
   );

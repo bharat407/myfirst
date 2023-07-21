@@ -1,6 +1,6 @@
 import React from "react";
 
-const DropdownMenu = ({ items, isDropdownOpen, toggleDropdown }) => {
+const DropdownData = ({ items, isDropdownOpen, toggleDropdown }) => {
   return (
     <div className="relative self-stretch flex items-stretch">
       <span className="inline-flex rounded-md">
@@ -12,7 +12,7 @@ const DropdownMenu = ({ items, isDropdownOpen, toggleDropdown }) => {
           aria-haspopup="true"
           aria-expanded={isDropdownOpen}
         >
-          Orders
+          Data
           <svg
             className={`h-4 w-4 ml-2 -mr-0.5 text-gray-500 ${
               isDropdownOpen ? "transform rotate-0" : ""
@@ -40,59 +40,67 @@ const DropdownMenu = ({ items, isDropdownOpen, toggleDropdown }) => {
             aria-labelledby="orders-menu"
           >
             <div className="block px-4 py-2 text-xs text-gray-400 dark:text-gray-500">
-              Manage Invoices
+              Manage Customers
             </div>
             <div id="list-invoices">
               <a
                 className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
-                href="/"
+                href="/list"
                 role="menuitem"
               >
-                List Invoices
+                List Customers
               </a>
             </div>
             <div id="add-invoice">
               <a
-                className="block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition"
-                href="/"
+                // className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
+                className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
+                href="/addcustomers"
                 role="menuitem"
               >
-                Add New Invoice
+                Add New Customer
               </a>
-            </div>
-            <div className="border-t border-gray-100 dark:border-gray-700"></div>
-            <div className="block px-4 py-2 text-xs text-gray-400 dark:text-gray-500">
-              Manage Payments
             </div>
             <div id="list-payments">
               <a
-                className="block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition"
-                href="/"
+                className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
+                href="/importcustomerfile"
                 role="menuitem"
               >
-                List Payments
+                Import Customers
               </a>
             </div>
             <div className="border-t border-gray-100 dark:border-gray-700"></div>
             <div className="block px-4 py-2 text-xs text-gray-400 dark:text-gray-500">
-              Manage Quotations
+              Manage Products
             </div>
             <div>
               <a
-                className="block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition"
-                href="/"
+                className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
+                href="/product"
                 role="menuitem"
               >
-                List Quotations
+                List Products
               </a>
             </div>
+
             <div>
               <a
-                className="block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition"
-                href="/"
+                className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
+                href="/addproduct"
                 role="menuitem"
               >
-                Add New Quotation
+                Add New Product
+              </a>
+            </div>
+
+            <div>
+              <a
+                className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
+                href="/importfile"
+                role="menuitem"
+              >
+                Import Products
               </a>
             </div>
           </div>
@@ -102,4 +110,4 @@ const DropdownMenu = ({ items, isDropdownOpen, toggleDropdown }) => {
   );
 };
 
-export default DropdownMenu;
+export default DropdownData;
