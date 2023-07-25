@@ -20,7 +20,7 @@ function App() {
         <Route path="/list" element={<List />} />
         <Route path="/addcustomers" element={<AddNewCustomer />} />
         <Route path="/product" element={<Product />} />
-        <Route path="/addproduct" element={<AddNewProduct />} />
+        <Route path="/createProduct" element={<AddNewProduct />} />
         <Route path="/importfile" element={<ImportProductsForm />} />
         <Route path="/importcustomerfile" element={<ImportCustomerForm />} />
         {/* <Route path="/invoice" element={<InvoiceForm />} /> */}
