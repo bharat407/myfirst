@@ -34,12 +34,10 @@ const AddNewProduct = () => {
         navigate("/product");
         toast.success("Product Added Successfully");
       } else {
-        // Handle error responses, if any
-        // ...
+        toast.error("Something went wrong");
       }
     } catch (error) {
-      // Handle fetch errors, if any
-      // ...
+      console.log(error);
     }
   };
 

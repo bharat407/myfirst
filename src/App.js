@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/list" element={<List />} />
-        <Route path="/addcustomers" element={<AddNewCustomer />} />
+        <Route path="/createCustomer" element={<AddNewCustomer />} />
         <Route path="/product" element={<Product />} />
         <Route path="/createProduct" element={<AddNewProduct />} />
         <Route path="/importfile" element={<ImportProductsForm />} />

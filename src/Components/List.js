@@ -20,7 +20,7 @@ const List = () => {
   const navigate = useNavigate();
   function submitHandler(e) {
     e.preventDefault();
-    navigate("/addcustomers");
+    navigate("/createProduct");
     toast.success("Please Add Customers");
   }
 

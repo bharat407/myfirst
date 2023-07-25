@@ -55,7 +55,7 @@ const DropdownData = ({ items, isDropdownOpen, toggleDropdown }) => {
               <a
                 // className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
                 className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
-                href="/addcustomers"
+                href="/createCustomer"
                 role="menuitem"
               >
                 Add New Customer
@@ -87,7 +87,7 @@ const DropdownData = ({ items, isDropdownOpen, toggleDropdown }) => {
             <div>
               <a
                 className="font-Nunito focus-within:bg-gray-800 focus-within:rounded-md focus:outline-none focus:ring-[2px] focus:ring-[#1E40AF] block px-4 py-2 text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800  transition"
-                href="/addproduct"
+                href="/createProduct"
                 role="menuitem"
               >
                 Add New Product
