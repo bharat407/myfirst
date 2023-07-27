@@ -1,45 +1,75 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from "../Button";
 import Footer from "../Footer";
 import { useForm } from "react-hook-form";
 
-const AddNewProduct = () => {
-  const { register, handleSubmit } = useForm();
-
+const EditProduct = () => {
+  const { id } = useParams();
+  const { register, handleSubmit, setValue } = useForm();
   const navigate = useNavigate();
 
-  function submitHandler(e) {
-    e.preventDefault();
-    navigate("/product");
-    toast.success("Welcome Back to Product List");
-  }
+  // State to store the product details
+  const [product, setProduct] = useState(null);
 
-  const createProduct = async (data) => {
+  useEffect(() => {
+    // Fetch the product details based on the product ID
+    const fetchProductDetails = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.REACT_APP_BASE_URL}/getallProduct/${id}`
+        );
+        if (response.ok) {
+          const productData = await response.json();
+          // Set the product data in the form fields
+          setProduct(productData);
+          setValue("name", productData.name);
+          setValue("price", productData.price);
+          setValue("details", productData.details);
+          setValue("taxrates", productData.taxrates.join(",")); // Convert taxrates array to a comma-separated string
+          setValue("taxmethod", productData.taxmethod);
+        } else {
+          toast.error("Failed to fetch product details");
+        }
+      } catch (error) {
+        console.log(error);
+        toast.error("Something went wrong");
+      }
+    };
+
+    fetchProductDetails();
+  }, [id, setValue]);
+
+  const updateProduct = async (data) => {
     try {
-      const savedUserResponse = await fetch(
-        `${process.env.REACT_APP_BASE_URL}/createProduct`,
+      const updatedProductResponse = await fetch(
+        `${process.env.REACT_APP_BASE_URL}/updateProduct/${id}`,
         {
-          method: "POST",
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data), // Send the entire data object directly
+          body: JSON.stringify(data),
         }
       );
 
-      if (savedUserResponse.ok) {
+      if (updatedProductResponse.ok) {
         navigate("/product");
-        toast.success("Product Added Successfully");
+        toast.success("Product Updated Successfully");
       } else {
-        toast.error("Something went wrong");
+        toast.error("Failed to update product");
       }
     } catch (error) {
       console.log(error);
     }
   };
+
+  if (!product) {
+    // You can show a loading state while fetching the product details
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="page min-h-screen font-Nunito bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
@@ -49,22 +79,22 @@ const AddNewProduct = () => {
           <div className="md:col-span-1 flex justify-between">
             <div className="px-4 sm:px-0">
               <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                Add New Product
+                Edit Product
               </h3>
               <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                Please fill the form below to add a product.
+                Update the form below to edit the product details.
                 <div className="disabled:opacity-25 transition mt-4">
                   <Button
                     className="appearance-none"
-                    onClick={submitHandler}
-                    name="LIST Products"
+                    onClick={() => navigate("/product")}
+                    name="Back to Products"
                   />
                 </div>
               </p>
             </div>
           </div>
           <div className="mt-5 md:mt-0 md:col-span-2">
-            <form onSubmit={handleSubmit(createProduct)}>
+            <form onSubmit={handleSubmit(updateProduct)}>
               <div className="px-4 py-5 bg-white dark:bg-gray-900 sm:p-6 shadow sm:rounded-tl-md sm:rounded-tr-md">
                 <div className="grid grid-cols-6 gap-6">
                   <div className="col-span-6 sm:col-span-3">
@@ -122,7 +152,6 @@ const AddNewProduct = () => {
                       ></textarea>
                     </div>
                   </div>
-
                   <div className="col-span-6 sm:col-span-3">
                     <div className="flex items-center justify-between">
                       <label
@@ -141,15 +170,12 @@ const AddNewProduct = () => {
                         {...register("taxrates")}
                       >
                         <option value="">Select Tax Rates</option>
-                        <option value="	Tax Rate 1">Tax Rate 1</option>
-                        <option value="	Tax Rate 2">Tax Rate 2</option>
-                        <option value="	Tax Rate 3"> Tax Rate 3</option>
-                        <option value="	Tax Rate 4"> Tax Rate 4</option>
-                        <option value="	Tax Rate 5"> Tax Rate 5</option>
+                        <option value="5%">5%</option>
+                        <option value="10%">10%</option>
+                        <option value="15%">15%</option>
                       </select>
                     </div>
                   </div>
-
                   <div className="col-span-6  sm:col-span-3">
                     <div className="flex  items-center justify-between">
                       <label
@@ -167,8 +193,9 @@ const AddNewProduct = () => {
                         {...register("taxmethod")}
                       >
                         <option value="">Select Tax Method</option>
-                        <option value="Inclusive">Inclusive</option>
-                        <option value="Exclusive">Exclusive</option>
+                        <option value="Method A">Method A</option>
+                        <option value="Method B">Method B</option>
+                        <option value="Method C">Method C</option>
                       </select>
                     </div>
                   </div>
@@ -180,7 +207,7 @@ const AddNewProduct = () => {
                     type="submit"
                     className="flex items-center px-4 py-3 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-700 focus:outline-none transition ease-in-out duration-150 ml-4 font-Nunito"
                   >
-                    Save
+                    Update
                   </button>
                 </div>
               </div>
@@ -193,4 +220,4 @@ const AddNewProduct = () => {
   );
 };
 
-export default AddNewProduct;
+export default EditProduct;

@@ -8,6 +8,9 @@ import Product from "./Components/Admin/Product";
 import AddNewProduct from "./Components/Admin/AddProduct";
 import ImportProductsForm from "./Components/Admin/Import";
 // import InvoiceForm from "./Components/invoice";
+import ModalDelete from "./Components/models/modalDelete";
+import EditCustomer from "./Components/editCustomer";
+import EditProduct from "./Components/Admin/EditProduct";
 import ImportCustomerForm from "./Components/importCustomer";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -23,7 +26,9 @@ function App() {
         <Route path="/createProduct" element={<AddNewProduct />} />
         <Route path="/importfile" element={<ImportProductsForm />} />
         <Route path="/importcustomerfile" element={<ImportCustomerForm />} />
-        {/* <Route path="/invoice" element={<InvoiceForm />} /> */}
+        <Route path="/editproduct" element={<EditProduct />} />
+        <Route path="/updateCustomer/:email" element={<EditCustomer />} />
+        <Route path="/deleteCustomer/:email" element={<ModalDelete />} />
       </Routes>
     </div>
   );
